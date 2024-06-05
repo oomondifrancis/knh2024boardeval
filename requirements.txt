@@ -11,3 +11,4 @@ typer
 python
 pandas
 matplotlib
+bcrypt
