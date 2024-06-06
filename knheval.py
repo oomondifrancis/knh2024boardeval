@@ -91,7 +91,7 @@ def landing_page():
         st.rerun()
 
     if st.button("Trust Secretary  Review"):
-        st.session_state.current_page = "trust secretary _review"
+        st.session_state.current_page = "trust_secretary_review"
         st.rerun()
 
     if st.button("Committee Review"):
@@ -347,7 +347,7 @@ def chairman_review():
         st.error("Please rate all aspects before submitting your feedback.")
 
 # Trustee review page
-def trustee_review():
+def trust_secretary_review():
     criteria = {
         "Organization and Management Skills": [
                 "How effectively does the Trustee Secretary manage and organize board meetings?",
