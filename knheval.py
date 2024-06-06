@@ -91,7 +91,7 @@ def landing_page():
         st.rerun()
 
     if st.button("Trust Secretary  Review"):
-        st.session_state.current_page = "trust_secretary_review"
+        st.session_state.current_page = "trustee_review"
         st.rerun()
 
     if st.button("Committee Review"):
@@ -193,7 +193,7 @@ def board_evaluation():
             feedback_data.to_csv(f"{st.session_state.username}_board_feedback.csv", index=False)
             st.write("Thank you for your feedback! Your response has been saved.")
             st.session_state.current_page = "landing_page"
-            st.experimental_rerun()
+            st.rerun()
     else:
         st.error("Please rate all aspects before submitting your feedback.")
 
@@ -274,7 +274,7 @@ def peer_review():
             feedback_data.to_csv(f"{st.session_state.username}_peer_feedback.csv", index=False)
             st.write("Thank you for your feedback! Your response has been saved.")
             st.session_state.current_page = "landing_page"
-            st.experimental_rerun()
+            st.rerun()
     else:
         st.error("Please rate all aspects for all peers before submitting your feedback.")
 
@@ -342,45 +342,45 @@ def chairman_review():
             feedback_data.to_csv(f"{st.session_state.username}_chairman_feedback.csv", index=False)
             st.write("Thank you for your feedback! Your response has been saved.")
             st.session_state.current_page = "landing_page"
-            st.experimental_rerun()
+            st.rerun()
     else:
         st.error("Please rate all aspects before submitting your feedback.")
 
 # Trustee review page
-def trust_secretary_review():
+def trustee_review():
     criteria = {
         "Organization and Management Skills": [
-                "How effectively does the Trustee Secretary manage and organize board meetings?",
-            "To what extent does the Trustee Secretary ensure that board members receive all necessary documents and information in a timely manner?",
-            "How well does the Trustee Secretary maintain and organize board records and documentation?"
+                "How effectively does the Trust Secretary manage and organize board meetings?",
+            "To what extent does the Trust Secretary ensure that board members receive all necessary documents and information in a timely manner?",
+            "How well does the Trust Secretary maintain and organize board records and documentation?"
             ],
         "Communication":[ 
-            "How effectively does the Trustee Secretary communicate with board members, ensuring clarity and completeness of information?",
-            "To what extent does the Trustee Secretary facilitate communication between the board and other stakeholders?",
-            "How well does the Trustee Secretary address and resolve any communication issues that arise?"
+            "How effectively does the Trust Secretary communicate with board members, ensuring clarity and completeness of information?",
+            "To what extent does the Trust Secretary facilitate communication between the board and other stakeholders?",
+            "How well does the Trust Secretary address and resolve any communication issues that arise?"
             ],
 
         "Compliance and Governance":[
-            "How effectively does the Trustee Secretary ensure that the board adheres to legal and regulatory requirements?",
-            "To what extent does the Trustee Secretary support the board in maintaining good governance practices?",
-            "How well does the Trustee Secretary stay informed about changes in laws and regulations that may impact the board?"
+            "How effectively does the Trust Secretary ensure that the board adheres to legal and regulatory requirements?",
+            "To what extent does the Trust Secretary support the board in maintaining good governance practices?",
+            "How well does the Trust Secretary stay informed about changes in laws and regulations that may impact the board?"
                     ],
 
         "Meeting Facilitation":[ 
-                                "How effectively does the Trustee Secretary facilitate the smooth running of board meetings?",
-            "To what extent does the Trustee Secretary ensure that meeting agendas are clear and comprehensive?",
-            "How well does the Trustee Secretary handle minutes and action items from meetings?"
+                                "How effectively does the Trust Secretary facilitate the smooth running of board meetings?",
+            "To what extent does the Trust Secretary ensure that meeting agendas are clear and comprehensive?",
+            "How well does the Trust Secretary handle minutes and action items from meetings?"
                             ],
     
         "Support to the Board":[
-            "How effectively does the Trustee Secretary support the board in carrying out its responsibilities?",
-            "To what extent does the Trustee Secretary provide useful and timely advice to board members?",
-        " How well does the Trustee Secretary anticipate and respond to the needs of the board?"
+            "How effectively does the Trust Secretary support the board in carrying out its responsibilities?",
+            "To what extent does the Trust Secretary provide useful and timely advice to board members?",
+        " How well does the Trust Secretary anticipate and respond to the needs of the board?"
         ]
    
     }
 
-    st.markdown("<h5>Please rate the Trustees on the following aspects on a scale of 1 (Very Poor) to 5 (Excellent).</h5>", unsafe_allow_html=True)
+    st.markdown("<h5>Please rate the Trust Secretary on the following aspects on a scale of 1 (Very Poor) to 5 (Excellent).</h5>", unsafe_allow_html=True)
 
     ratings = st.session_state.ratings_trustee
     for section, questions in criteria.items():
@@ -427,7 +427,7 @@ def trust_secretary_review():
             feedback_data.to_csv(f"{st.session_state.username}_trustee_feedback.csv", index=False)
             st.write("Thank you for your feedback! Your response has been saved.")
             st.session_state.current_page = "landing_page"
-            st.experimental_rerun()
+            st.rerun()
     else:
         st.error("Please rate all aspects before submitting your feedback.")
 
@@ -501,7 +501,7 @@ def committee_review():
             feedback_data.to_csv(f"{st.session_state.username}_committee_feedback.csv", index=False)
             st.write("Thank you for your feedback! Your response has been saved.")
             st.session_state.current_page = "landing_page"
-            st.experimental_rerun()
+            st.rerun()
     else:
         st.error("Please rate all aspects for all committees before submitting your feedback.")
 
