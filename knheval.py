@@ -90,8 +90,8 @@ def landing_page():
         st.session_state.current_page = "chairman_review"
         st.rerun()
 
-    if st.button("Trustee Secretary  Review"):
-        st.session_state.current_page = "trustee secretary _review"
+    if st.button("Trust Secretary  Review"):
+        st.session_state.current_page = "trust secretary _review"
         st.rerun()
 
     if st.button("Committee Review"):
