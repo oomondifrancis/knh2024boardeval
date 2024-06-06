@@ -80,23 +80,23 @@ def landing_page():
     
     if st.button("Evaluate the Board"):
         st.session_state.current_page = "board_evaluation"
-        st.experimental_rerun()
+        st.rerun()
 
     if st.button("Peer Review"):
         st.session_state.current_page = "peer_review"
-        st.experimental_rerun()
+        st.rerun()
     
     if st.button("Chairman Review"):
         st.session_state.current_page = "chairman_review"
-        st.experimental_rerun()
+        st.rerun()
 
-    if st.button("Trustee Review"):
-        st.session_state.current_page = "trustee_review"
-        st.experimental_rerun()
+    if st.button("Trustee Secretary  Review"):
+        st.session_state.current_page = "trustee secretary _review"
+        st.rerun()
 
     if st.button("Committee Review"):
         st.session_state.current_page = "committee_review"
-        st.experimental_rerun()
+        st.rerun()
 
 # Board evaluation page
 def board_evaluation():
@@ -349,18 +349,35 @@ def chairman_review():
 # Trustee review page
 def trustee_review():
     criteria = {
-        "Governance": [
-            "Commitment to fiduciary responsibilities.",
-            "Adherence to governance standards."
-        ],
-        "Engagement": [
-            "Participation in board meetings and activities.",
-            "Engagement with stakeholders."
-        ],
-        "Strategic Oversight": [
-            "Contribution to strategic planning.",
-            "Oversight of financial and operational performance."
+        "Organization and Management Skills": [
+                "How effectively does the Trustee Secretary manage and organize board meetings?",
+            "To what extent does the Trustee Secretary ensure that board members receive all necessary documents and information in a timely manner?",
+            "How well does the Trustee Secretary maintain and organize board records and documentation?"
+            ],
+        "Communication":[ 
+            "How effectively does the Trustee Secretary communicate with board members, ensuring clarity and completeness of information?",
+            "To what extent does the Trustee Secretary facilitate communication between the board and other stakeholders?",
+            "How well does the Trustee Secretary address and resolve any communication issues that arise?"
+            ],
+
+        "Compliance and Governance":[
+            "How effectively does the Trustee Secretary ensure that the board adheres to legal and regulatory requirements?",
+            "To what extent does the Trustee Secretary support the board in maintaining good governance practices?",
+            "How well does the Trustee Secretary stay informed about changes in laws and regulations that may impact the board?"
+                    ],
+
+        "Meeting Facilitation":[ 
+                                "How effectively does the Trustee Secretary facilitate the smooth running of board meetings?",
+            "To what extent does the Trustee Secretary ensure that meeting agendas are clear and comprehensive?",
+            "How well does the Trustee Secretary handle minutes and action items from meetings?"
+                            ],
+    
+        "Support to the Board":[
+            "How effectively does the Trustee Secretary support the board in carrying out its responsibilities?",
+            "To what extent does the Trustee Secretary provide useful and timely advice to board members?",
+        " How well does the Trustee Secretary anticipate and respond to the needs of the board?"
         ]
+   
     }
 
     st.markdown("<h5>Please rate the Trustees on the following aspects on a scale of 1 (Very Poor) to 5 (Excellent).</h5>", unsafe_allow_html=True)
